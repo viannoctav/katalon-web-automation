@@ -1,0 +1,35 @@
+package com.example
+
+import com.kms.katalon.core.annotation.Keyword
+import java.util.Random
+
+public class RandomHelper {
+
+    @Keyword
+    static String randomName(int length = 6) {
+        String chars = 'abcdefghijklmnopqrstuvwxyz'
+        Random rand = new Random()
+        return (1..length).collect { chars[rand.nextInt(chars.length())] }.join('').capitalize()
+    }
+
+    @Keyword
+    static String randomEmail() {
+        String prefix = randomName(8).toLowerCase()
+        String suffix = randomName(4).toLowerCase()
+        return "${prefix}.${suffix}@mailinator.com"
+    }
+
+    @Keyword
+    static String randomPhone() {
+        Random rand = new Random()
+        // Format: 628XXXXXXXXX (11 digit setelah 62)
+        String digits = (1..9).collect { rand.nextInt(9) + 1 }.join('')
+        return "628${digits}"
+    }
+
+    @Keyword
+    static String randomPostalCode() {
+        Random rand = new Random()
+        return (10000 + rand.nextInt(89999)).toString()
+    }
+}
