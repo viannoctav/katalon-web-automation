@@ -3,15 +3,15 @@
    <description></description>
    <name>katalon-web-automation</name>
    <tag></tag>
-   <UUID>ffaeae98-41fa-4149-94b8-da6bdf16495c</UUID>
+   <UUID>d0a46cc0-b91c-46cf-b569-f35ecb5549b7</UUID>
    <createdEdition>ENTERPRISE</createdEdition>
    <createdVersion>11.2.1</createdVersion>
-   <freeLicense>false</freeLicense>
+   <freeLicense>true</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
    <modifiedEdition>ENTERPRISE</modifiedEdition>
    <modifiedVersion>11.2.1</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>C:\Users\Rivita Anggun\git\katalon-web-automation\katalon-web-automation.prj</projectFileLocation>
+   <projectFileLocation>C:\Users\Rivita Anggun\git\katalon-web-automation\katalon-web-automation\katalon-web-automation.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
