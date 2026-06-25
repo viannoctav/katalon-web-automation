@@ -17,9 +17,11 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.assertElementText(findTestObject('Page_Login/labelEmailAddress'), 'Email address *', 0)
-WebUI.setText(findTestObject('Page_Login/fieldEmail'), loginEmail)
-WebUI.assertElementText(findTestObject('Page_Login/labelPassword'), 'Password *', 0)
-WebUI.setText(findTestObject('Page_Login/fieldPassword'), loginPassword)
-WebUI.click(findTestObject('Page_Login/buttonLogin'))
-WebUI.assertElementVisible(findTestObject('Page_Overview/headerMyAccount'), 0)
+WebUI.callTestCase(findTestCase('Reusable Test Case/Open_Browser'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Positive Test Case/Register/TC001_Register'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Positive Test Case/Login/TC003_Login_Special_Case'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Reusable Test Case/Close_Browser'), [:], FailureHandling.STOP_ON_FAILURE)
+

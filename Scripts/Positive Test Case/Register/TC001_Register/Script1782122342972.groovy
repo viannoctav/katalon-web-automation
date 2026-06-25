@@ -16,68 +16,63 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import com.example.RandomHelper as RandomHelper
+
+// Generate random data
+String firstName = RandomHelper.randomName(6)
+String lastName  = RandomHelper.randomName(5)
+String email     = RandomHelper.randomEmail()
+String phone     = RandomHelper.randomPhone()
+String postal    = RandomHelper.randomPostalCode()
+String password  = "Auto@" + RandomHelper.randomName(6) + "1!"
+String street    = RandomHelper.randomStreet()
+def location = RandomHelper.randomCityState()
+String city  = location['city']
+String state = location['state']
+
+println('=== DATA REGISTER RANDOM ===')
+println("Name     : ${firstName} ${lastName}")
+println("Email    : ${email}")
+println("Phone    : ${phone}")
+println("Password : ${password}")
+println("Street   : ${street}")
+println("City     : ${city}")
+println("State    : ${state}")
+println('=============================')
 
 WebUI.assertElementText(findTestObject('Page_Home/buttonLoginFromHomePage'), 'Sign in', 0)
-
 WebUI.click(findTestObject('Page_Home/buttonLoginFromHomePage'))
-
 WebUI.assertElementText(findTestObject('Page_Login/headerLogin'), 'Login', 0)
-
 WebUI.assertElementText(findTestObject('Page_Login/buttonRegisterFromLoginPage'), 'Register your account', 0)
-
 WebUI.click(findTestObject('Page_Login/buttonRegisterFromLoginPage'))
-
 WebUI.assertElementText(findTestObject('Page_Register/headerRegistration'), 'Customer registration', 0)
-
 WebUI.assertElementText(findTestObject('Page_Register/labelFirstName'), 'First name', 0)
-
-WebUI.setText(findTestObject('Page_Register/fieldFirstName'), 'Robot')
-
+WebUI.setText(findTestObject('Page_Register/fieldFirstName'), firstName)
 WebUI.assertElementText(findTestObject('Page_Register/labelLastName'), 'Last name', 0)
-
-WebUI.setText(findTestObject('Page_Register/fieldLastName'), 'Auto')
-
+WebUI.setText(findTestObject('Page_Register/fieldLastName'), lastName)
 WebUI.assertElementText(findTestObject('Page_Register/labelDateOfBirth'), 'Date of Birth *', 0)
-
 WebUI.setText(findTestObject('Page_Register/fieldDateOfBirth'), '1998-08-09')
-
 WebUI.assertElementText(findTestObject('Page_Register/labelCountry'), 'Country', 0)
-
 WebUI.selectOptionByValue(findTestObject('Page_Register/fieldCountry'), 'ID', false)
-
 WebUI.assertElementText(findTestObject('Page_Register/labelPostalCode'), 'Postal code', 0)
-
-WebUI.setText(findTestObject('Page_Register/fieldPostalCode'), '198989')
-
+WebUI.setText(findTestObject('Page_Register/fieldPostalCode'), postal)
 WebUI.assertElementText(findTestObject('Page_Register/labelHouseNumber'), 'House number', 0)
-
-WebUI.setText(findTestObject('Page_Register/fieldHouseNumber'), '6288888888')
-
+WebUI.setText(findTestObject('Page_Register/fieldHouseNumber'), phone)
 WebUI.assertElementText(findTestObject('Page_Register/labelStreet'), 'Street', 0)
-
-WebUI.setText(findTestObject('Page_Register/fieldStreet'), 'Bekasi')
-
+WebUI.setText(findTestObject('Page_Register/fieldStreet'), street)
 WebUI.assertElementText(findTestObject('Page_Register/labelCity'), 'City', 0)
-
-WebUI.setText(findTestObject('Page_Register/fieldCity'), 'Bekasi')
-
+WebUI.setText(findTestObject('Page_Register/fieldCity'), city)
 WebUI.assertElementText(findTestObject('Page_Register/labelState'), 'State', 0)
-
-WebUI.setText(findTestObject('Page_Register/fieldState'), 'Bekasi')
-
+WebUI.setText(findTestObject('Page_Register/fieldState'), state)
 WebUI.assertElementText(findTestObject('Page_Register/labelPhoneNumber'), 'Phone', 0)
-
-WebUI.setText(findTestObject('Page_Register/fieldPhoneNumber'), '6288888888888888')
-
+WebUI.setText(findTestObject('Page_Register/fieldPhoneNumber'), phone)
 WebUI.assertElementText(findTestObject('Page_Register/labelEmailAddress'), 'Email address', 0)
-
-WebUI.setText(findTestObject('Page_Register/fieldEmailAddress'), 'robotmodeauto@gmail.com')
-
+WebUI.setText(findTestObject('Page_Register/fieldEmailAddress'), email)
 WebUI.assertElementText(findTestObject('Page_Register/labelPassword'), 'Password', 0)
-
-WebUI.setText(findTestObject('Page_Register/fieldPassword'), 'Robotmodeauto123!')
-
+WebUI.setText(findTestObject('Page_Register/fieldPassword'), password)
 WebUI.click(findTestObject('Page_Register/buttonSubmitRegister'))
-
 WebUI.assertElementVisible(findTestObject('Page_Login/headerLogin'), 0)
 
+// Simpan email & password ke GlobalVariable
+GlobalVariable.tempEmail    = email
+GlobalVariable.tempPassword = password

@@ -17,9 +17,15 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.assertElementText(findTestObject('Page_Login/labelEmailAddress'), 'Email address *', 0)
-WebUI.setText(findTestObject('Page_Login/fieldEmail'), loginEmail)
+WebUI.setText(findTestObject('Page_Login/fieldEmail'), GlobalVariable.tempEmail)
+
+WebUI.waitForElementVisible(findTestObject('Page_Login/labelPassword'), 10)
+
 WebUI.assertElementText(findTestObject('Page_Login/labelPassword'), 'Password *', 0)
-WebUI.setText(findTestObject('Page_Login/fieldPassword'), loginPassword)
+
+WebUI.setText(findTestObject('Page_Login/fieldPassword'), GlobalVariable.tempPassword)
+
 WebUI.click(findTestObject('Page_Login/buttonLogin'))
+
 WebUI.assertElementVisible(findTestObject('Page_Overview/headerMyAccount'), 0)
+

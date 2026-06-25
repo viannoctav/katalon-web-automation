@@ -32,4 +32,35 @@ public class RandomHelper {
         Random rand = new Random()
         return (10000 + rand.nextInt(89999)).toString()
     }
+	
+	@Keyword
+	static String randomStreet() {
+		String[] streetNames = ['Mawar', 'Melati', 'Kenanga', 'Anggrek', 'Dahlia', 'Flamboyan', 'Cempaka', 'Bougenville']
+		Random rand = new Random()
+		String name = streetNames[rand.nextInt(streetNames.length)]
+		int number = rand.nextInt(100) + 1
+		return "Jl. ${name} No. ${number}"
+	}
+	
+	@Keyword
+	static Map randomCityState() {
+	    def locations = [
+	        [city: 'Bekasi',      state: 'Jawa Barat'],
+	        [city: 'Depok',       state: 'Jawa Barat'],
+	        [city: 'Bogor',       state: 'Jawa Barat'],
+	        [city: 'Bandung',     state: 'Jawa Barat'],
+	        [city: 'Surabaya',    state: 'Jawa Timur'],
+	        [city: 'Malang',      state: 'Jawa Timur'],
+	        [city: 'Semarang',    state: 'Jawa Tengah'],
+	        [city: 'Yogyakarta',  state: 'DI Yogyakarta'],
+	        [city: 'Medan',       state: 'Sumatera Utara'],
+	        [city: 'Makassar',    state: 'Sulawesi Selatan'],
+	        [city: 'Denpasar',    state: 'Bali'],
+	        [city: 'Palembang',   state: 'Sumatera Selatan'],
+	        [city: 'Tangerang',   state: 'Banten'],
+	        [city: 'Jakarta',     state: 'DKI Jakarta']
+	    ]
+	    Random rand = new Random()
+	    return locations[rand.nextInt(locations.size())]
+	}
 }
