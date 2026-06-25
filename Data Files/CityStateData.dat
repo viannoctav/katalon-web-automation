@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>CityStateData</name>
+   <tag></tag>
+   <connectionProperties/>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>f66b1a43-1241-42f9-8ded-5a0a6076b1f7</dataFileGUID>
+   <dataSourceUrl></dataSourceUrl>
+   <driver>InternalData</driver>
+   <data>Bekasi Jawa+Barat</data>
+   <data>Depok Jawa+Barat</data>
+   <data>Bogor Jawa+Barat</data>
+   <data>Bandung Jawa+Barat</data>
+   <data>Surabaya Jawa+Timur</data>
+   <data>Malang Jawa+Timur</data>
+   <data>Semarang Jawa+Tengah</data>
+   <data>Yogyakarta DI+Yogyakarta</data>
+   <data>Medan Sumatera+Utara</data>
+   <data>Makassar Sulawesi+Selatan</data>
+   <data>Denpasar Bali</data>
+   <data>Palembang Sumatera+Selatan</data>
+   <data>Tanggerang Banten</data>
+   <data>Jakarta DKI+Jakarta</data>
+   <internalDataColumns>
+      <columnIndex>0</columnIndex>
+      <name>city</name>
+      <size>14</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>1</columnIndex>
+      <name>state</name>
+      <size>14</size>
+   </internalDataColumns>
+   <isInternalPath>false</isInternalPath>
+   <query></query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName></sheetName>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

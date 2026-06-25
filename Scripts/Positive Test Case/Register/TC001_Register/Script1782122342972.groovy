@@ -17,8 +17,9 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import com.example.RandomHelper as RandomHelper
+import com.kms.katalon.core.testdata.TestData as TestData
 
-// Generate random data
+// Generate random data untuk beberapa field
 String firstName = RandomHelper.randomName(6)
 String lastName  = RandomHelper.randomName(5)
 String email     = RandomHelper.randomEmail()
@@ -26,20 +27,25 @@ String phone     = RandomHelper.randomPhone()
 String postal    = RandomHelper.randomPostalCode()
 String password  = "Auto@" + RandomHelper.randomName(6) + "1!"
 String street    = RandomHelper.randomStreet()
-def location = RandomHelper.randomCityState()
-String city  = location['city']
-String state = location['state']
 
+// Print Hasil Generate
 println('=== DATA REGISTER RANDOM ===')
 println("Name     : ${firstName} ${lastName}")
 println("Email    : ${email}")
 println("Phone    : ${phone}")
 println("Password : ${password}")
 println("Street   : ${street}")
-println("City     : ${city}")
-println("State    : ${state}")
 println('=============================')
 
+// Import Test Data untuk Value City dan State
+TestData cityData = findTestData('CityStateData')
+int totalRows = cityData.getRowNumbers()
+int randomRow = new Random().nextInt(totalRows) + 1
+
+String city  = cityData.getValue('city', randomRow)
+String state = cityData.getValue('state', randomRow)
+
+// Test Step Register
 WebUI.assertElementText(findTestObject('Page_Home/buttonLoginFromHomePage'), 'Sign in', 0)
 WebUI.click(findTestObject('Page_Home/buttonLoginFromHomePage'))
 WebUI.assertElementText(findTestObject('Page_Login/headerLogin'), 'Login', 0)

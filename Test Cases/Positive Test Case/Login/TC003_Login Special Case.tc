@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Login dari hasil register random string</description>
+   <name>TC003_Login Special Case</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>607b6425-0812-412e-a91a-b55283734635</testCaseGuid>
+</TestCaseEntity>

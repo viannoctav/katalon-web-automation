@@ -15,21 +15,21 @@
       <guid>1c1dcdcc-219e-4a44-9ac1-7274311c21be</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Scenarios/E2E - Successfully Register With Valid Data</testCaseId>
+      <testCaseId>Test Cases/Scenarios/E2E_Successfully_Register_With_Valid_Data</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>9ab827d9-72c1-4c38-b713-39bdf5957b1f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Scenarios/E2E - Successfully Login With Valid Data</testCaseId>
+      <testCaseId>Test Cases/Scenarios/E2E_Successfully_Login_With_Valid_Data</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>aaa63f66-a2e7-4eb0-82f3-6996f427b119</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Scenarios/E2E - Successfully Login from Register</testCaseId>
+      <testCaseId>Test Cases/Scenarios/E2E_Successfully_Login_from_Register</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

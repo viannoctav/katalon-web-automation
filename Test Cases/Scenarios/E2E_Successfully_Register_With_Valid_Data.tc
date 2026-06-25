@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>E2E - Successfully Register With Valid Data</name>
+   <name>E2E_Successfully_Register_With_Valid_Data</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
